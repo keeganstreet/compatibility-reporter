@@ -1,0 +1,126 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"env": {
+		"node": true,
+		"browser": true
+	},
+	"globals": {
+	},
+	"rules": {
+		"no-bitwise": 2,
+		"camelcase": [
+			2,
+			{
+				"properties": "never"
+			}
+		],
+		"curly": [
+			2,
+			"all"
+		],
+		"eqeqeq": 2,
+		"guard-for-in": 2,
+		"wrap-iife": 2,
+		"no-use-before-define": 2,
+		"new-cap": 0,
+		"no-caller": 2,
+		"no-empty": [
+			2,
+			{
+				"allowEmptyCatch": true
+			}
+		],
+		"no-new": 2,
+		"no-plusplus": 2,
+		"quotes": [
+			2,
+			"single"
+		],
+		"no-undef": 2,
+		"no-unused-vars": 0,
+		"strict": 0,
+		"semi": 1,
+		"space-before-function-paren": [
+			2,
+			"never"
+		],
+		"array-bracket-spacing": [
+			2,
+			"never"
+		],
+		"space-in-parens": [
+			2,
+			"never"
+		],
+		"quote-props": [
+			2,
+			"consistent-as-needed"
+		],
+		"key-spacing": [
+			2,
+			{
+				"beforeColon": false,
+				"afterColon": true
+			}
+		],
+		"space-unary-ops": [
+			2,
+			{
+				"words": false,
+				"nonwords": false
+			}
+		],
+		"no-mixed-spaces-and-tabs": 2,
+		"no-trailing-spaces": 2,
+		"comma-dangle": [
+			2,
+			"never"
+		],
+		"yoda": [
+			2,
+			"never"
+		],
+		"no-with": 2,
+		"no-multiple-empty-lines": 2,
+		"space-before-blocks": [
+			2,
+			"always"
+		],
+		"one-var": 0,
+		"comma-style": [
+			2,
+			"last"
+		],
+		"space-infix-ops": 2,
+		"eol-last": 2,
+		"dot-notation": 2,
+		"keyword-spacing": [
+			2,
+			{}
+		],
+		"consistent-this": [
+			0,
+			"_this"
+		],
+		"linebreak-style": [
+			2,
+			"unix"
+		],
+		"indent": [
+			0,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"brace-style": [
+			1,
+			"1tbs",
+			{
+				"allowSingleLine": true
+			}
+		]
+	}
+}
