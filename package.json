@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "jasmine": "^2.4.1"
+  },
+  "dependencies": {
+    "glob": "^7.0.5"
   }
 }

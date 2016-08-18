@@ -3,14 +3,14 @@ var compatibilityReporter = require('../lib/compatibility-reporter');
 var result = compatibilityReporter.report({
 	input: {
 		css: {
-			files: 'build/assets/css/*.css'
+			files: 'spec/fixtures/**/*.css'
 		},
 		javascript: {
-			files: 'source/assets/js/**/*.js',
-			ignore: 'source/assets/js/lib/**/*.js'
+			files: 'spec/fixtures/**/*.js',
+			ignore: 'spec/fixtures/lib/*.js'
 		},
 		html: {
-			files: 'build/**/*.html'
+			files: 'spec/fixtures/**/*.html'
 		}
 	},
 	browsers: [
