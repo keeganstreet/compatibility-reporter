@@ -3,5 +3,11 @@
   "version": "0.1.0",
   "description": "Generate a report on the Web Platform features that your website uses, and the browser support of each feature.",
   "author": "Keegan Street",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
 }
