@@ -48,25 +48,30 @@ var options = {
 		'ie_mob 11',
 		'ios_saf 9.3',
 		'and_chr 51'
-	],
-	features: [
-		'arrow-functions',
-		'css-gradients',
-		'css-transitions',
-		'css3-boxsizing',
-		'history',
-		'matchmedia',
-		'promises',
-		'svg',
-		'webworkers'
 	]
+	// I dont think we need features as an input option, it makes it un-necessarily complex
+	// We can search for all features
+	// Maybe if all the browsers support a feature it can be moved to the end of the report
+	// features: [
+	// 	'addeventlistener',
+	// 	'arrow-functions',
+	// 	'atob-btoa',
+	// 	'autofocus',
+	// 	'css-gradients',
+	// 	'css-transitions',
+	// 	'css3-boxsizing',
+	// 	'history',
+	// 	'matchmedia',
+	// 	'promises',
+	// 	'svg',
+	// 	'webworkers'
+	// ]
 };
 
 // Example JSON output
 
-var results = [
-	{
-		name: 'arrow-functions',
+var results = {
+	'arrow-functions': {
 		browsers: {
 			'chrome 51': 'y',
 			'firefox 47': 'y',
@@ -92,4 +97,4 @@ var results = [
 			}
 		]
 	}
-];
+};
