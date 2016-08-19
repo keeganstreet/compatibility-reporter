@@ -1,0 +1,66 @@
+var loadFeatures = require('../lib/load-features');
+
+describe('Features loading', function() {
+	var features;
+
+	it('should load features', function() {
+		features = loadFeatures();
+		expect(features).toEqual(jasmine.any(Object));
+		expect(features['arrow-functions']).toEqual(jasmine.any(Object));
+		expect(features['css-gradients']).toEqual(jasmine.any(Object));
+	});
+
+	it('properties on features should be booleans or arrays of regular expressions', function() {
+		var featureName,
+			feature,
+			testName,
+			test;
+
+		for (featureName in features) {
+			if (features.hasOwnProperty(featureName)) {
+				feature = features[featureName];
+
+				if (feature.hasOwnProperty('css')) {
+					expect(feature.css).toEqual(jasmine.any(Object));
+					for (testName in feature.css) {
+						if (feature.css.hasOwnProperty(testName)) {
+							test = feature.css[testName];
+							expect(Array.isArray(test)).toBe(true);
+							test.forEach(function(regexp) {
+								expect(regexp.constructor === RegExp).toBe(true);
+							});
+						}
+					}
+				}
+
+				if (feature.hasOwnProperty('javascript')) {
+					expect(feature.javascript).toEqual(jasmine.any(Object));
+					for (testName in feature.javascript) {
+						if (feature.javascript.hasOwnProperty(testName)) {
+							test = feature.javascript[testName];
+							expect(Array.isArray(test) || typeof test === 'boolean').toBe(true);
+							if (Array.isArray(test)) {
+								test.forEach(function(regexp) {
+									expect(regexp.constructor === RegExp).toBe(true);
+								});
+							}
+						}
+					}
+				}
+
+				if (feature.hasOwnProperty('html')) {
+					expect(feature.html).toEqual(jasmine.any(Object));
+					for (testName in feature.html) {
+						if (feature.html.hasOwnProperty(testName)) {
+							test = feature.html[testName];
+							expect(Array.isArray(test)).toBe(true);
+							test.forEach(function(regexp) {
+								expect(regexp.constructor === RegExp).toBe(true);
+							});
+						}
+					}
+				}
+			}
+		}
+	});
+});
