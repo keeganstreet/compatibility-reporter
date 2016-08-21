@@ -8,10 +8,10 @@ So far I have only added checks for the following features: `'addeventlistener',
 
 The `report` method accepts one object as a parameter. This object should have two properties: `input` and `browsers`.
 
-`input.css.files` accepts a [Glob](https://github.com/isaacs/node-glob) pattern for the location of the CSS files you want to process.
-`input.javascript.files` accepts a Glob pattern for the location of the JavaScript files you want to process.
-`input.html.files` accepts a Glob pattern for the location of the CSS files you want to process.
-`browsers` accepts an array of browsers that you would like to be included in the report. For example `["chrome 52", "ie 11"]` will return results for Chrome 52 and IE 11. This array can be generated with [Browserslist](https://github.com/ai/browserslist), for example `browserslist('last 1 version, > 10%');` will return results for all browser versions that are the last version of each major browser, or have a usage of over 10% in global usage statistics.
+- `input.css.files` accepts a [Glob](https://github.com/isaacs/node-glob) pattern for the location of the CSS files you want to process.
+- `input.javascript.files` accepts a Glob pattern for the location of the JavaScript files you want to process.
+- `input.html.files` accepts a Glob pattern for the location of the CSS files you want to process.
+- `browsers` accepts an array of browsers that you would like to be included in the report. For example `["chrome 52", "ie 11"]` will return results for Chrome 52 and IE 11. This array can be generated with [Browserslist](https://github.com/ai/browserslist), for example `browserslist('last 1 version, > 10%');` will return results for all browser versions that are the last version of each major browser, or have a usage of over 10% in global usage statistics.
 
 ## Example usage
 
