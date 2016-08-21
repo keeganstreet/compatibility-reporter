@@ -1,4 +1,5 @@
-var compatibilityReporter = require('../lib/compatibility-reporter');
+var compatibilityReporter = require('../lib/compatibility-reporter'),
+	loadFeatures = require('../lib/load-features');
 
 describe('Compatibility reporter', function() {
 	var browsers = [
@@ -41,7 +42,7 @@ describe('Compatibility reporter', function() {
 		expect(report).toEqual(jasmine.any(Object));
 	});
 
-	['addeventlistener', 'arrow-functions', 'atob-btoa', 'autofocus', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'history', 'matchmedia', 'promises', 'svg', 'webworkers'].forEach(function(feature) {
+	Object.keys(loadFeatures()).forEach(function(feature) {
 		it('should find the use of ' + feature, function() {
 			expect(report[feature]).toEqual(jasmine.any(Object));
 		});
