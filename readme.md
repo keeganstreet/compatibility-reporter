@@ -2,6 +2,8 @@
 
 Generate a report on the Web Platform features that your website uses, and the browser support of each feature, using data from [Can I Use](http://caniuse.com/).
 
+So far I have only added checks for the following features: `'addeventlistener', 'arrow-functions', 'atob-btoa', 'autofocus', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'history', 'matchmedia', 'promises', 'svg', 'webworkers'`. More to come. See [Adding checks for features](#adding-checks).
+
 ## Input
 
 The `report` method accepts one object as a parameter. This object should have two properties: `input` and `browsers`.
@@ -89,3 +91,19 @@ Each browser version receives a string ID indicating the level of support for th
 - `x` - Requires prefi(x) to work
 - `d` - (D)isabled by default (need to enable flag or something)
 - `#n` - Where n is a number, starting with 1, corresponds to the notes on the caniuse.com page for this feature. For example: `"42":"y #1"` means version 42 is supported by default and see note 1.
+
+## <a name="adding-checks"></a>Adding checks for features
+
+To add a check for a feature, add a JavaScript file in the `lib/features` folder with the same name as the Can I Use feature definition at https://github.com/Fyrd/caniuse/tree/master/features-json. Add a CSS, JavaScript and/or HTML fixture to the `spec/fixtures` folder to verify your check.
+
+### CSS
+
+CSS checks should define regular expressions to match declaration properties and/or declaration values.
+
+### JavaScript
+
+JavaScript checks should define regular expressions to match identifiers or literals, as per the [ESTree specification](https://github.com/estree/estree). Or alternatively they can check for the existence of a node type, for example the Arrow Functions test will return true if the script has a node of type `ArrowFunctionExpression`, no regular expression matching is necessary.
+
+### HTML
+
+CSS checks should define regular expressions to match element names or attribute names.
