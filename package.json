@@ -2,7 +2,7 @@
   "name": "compatibility-reporter",
   "version": "0.1.0",
   "description": "Generate a report on the Web Platform features that your website uses, and the browser support of each feature.",
-  "main" : "lib/compatibility-reporter.js",
+  "main": "lib/compatibility-reporter.js",
   "author": "Keegan Street",
   "license": "MIT",
   "scripts": {
@@ -17,6 +17,7 @@
     "espree": "^3.1.7",
     "esrecurse": "^4.1.0",
     "glob": "^7.0.5",
+    "handlebars": "^4.0.5",
     "parse5": "^2.2.0"
   }
 }

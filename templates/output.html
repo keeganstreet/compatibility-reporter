@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Compatibility reporter</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background: #f2e8d5;
+			font-size: 12px;
+		}
+
+		table {
+			border-spacing: 4px;
+		}
+
+		th,
+		td {
+			padding: 5px;
+			background-color: #ecdec3;
+		}
+
+		tbody th {
+			text-align: left;
+		}
+
+		.support-status-y {
+			background-color: #39b54a;
+			color: #fff;
+		}
+
+		.support-status-n,
+		.support-status-p,
+		.support-status-d {
+			background-color: #c44230;
+			color: #fff;
+		}
+
+		.support-status-a,
+		.support-status-x {
+			background-color: #a8bd04;
+			color: #fff;
+		}
+
+		.support-status-u {
+			background-color: #838383;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<h1><a href="https://github.com/keeganstreet/compatibility-reporter">Compatibility reporter</a></h1>
+	<p>This report shows which Web Platform features the analysed website uses, and the browser support of each feature, using data from <a href="http://caniuse.com/">Can I Use</a>.</p>
+
+	<h2>Browser support</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Feature</th>
+				{{#each browsers}}
+				<th>{{browserName}} {{browserVersion}}</th>
+				{{/each}}
+			</tr>
+		</thead>
+		<tbody>
+			{{#each results}}
+			<tr>
+				<th><a href="#feature-{{@key}}">{{@key}}</a></th>
+				{{#each ../browsers}}
+				<td class="{{browserFeatureSupportClassname this ../this}}">{{browserFeatureSupport this ../this}}</td>
+				{{/each}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<h2>References to features in code</h2>
+	<table>
+		<thead>
+			<tr>
+				<th id="reference-file">Filename</th>
+				<th id="reference-line">Line</th>
+				<th id="reference-column">Column</th>
+				<th id="reference-type">Type of match</th>
+				<th id="reference-match">Match</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each results}}
+			<tr>
+				<th colspan="5" id="feature-{{@key}}"><h3>{{@key}}</h3></th>
+			</tr>
+			{{#each occurances}}
+			<tr>
+				<td headers="feature-{{@key}} reference-file">{{file}}</td>
+				<td headers="feature-{{@key}} reference-line">{{line}}</td>
+				<td headers="feature-{{@key}} reference-column">{{column}}</td>
+				<td headers="feature-{{@key}} reference-type">{{type}}</td>
+				<td headers="feature-{{@key}} reference-match">{{match}}</td>
+			</tr>
+			{{/each}}
+			{{/each}}
+		<tbody>
+	</table>
+
+	<h2>Files analysed</h2>
+	<h3>CSS</h3>
+	<ul>
+		{{#each files.css}}
+		<li>{{filename}}</li>
+		{{/each}}
+	</ul>
+	<h3>JavaScript</h3>
+	<ul>
+		{{#each files.javascript}}
+		<li>{{filename}}</li>
+		{{/each}}
+	</ul>
+	<h3>HTML</h3>
+	<ul>
+		{{#each files.html}}
+		<li>{{filename}}</li>
+		{{/each}}
+	</ul>
+
+</body>
+</html>

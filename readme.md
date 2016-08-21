@@ -8,12 +8,13 @@ So far I have only added checks for the following features: `'addeventlistener',
 
 ## Input
 
-The `report` method accepts one object as a parameter. This object should have two properties: `input` and `browsers`.
+The `report` method accepts one object as a parameter. This object should have three properties: `input`, `browsers` and `output` (optional).
 
 - `input.css.files` accepts a [Glob](https://github.com/isaacs/node-glob) pattern for the location of the CSS files you want to process.
 - `input.javascript.files` accepts a Glob pattern for the location of the JavaScript files you want to process.
 - `input.html.files` accepts a Glob pattern for the location of the CSS files you want to process.
 - `browsers` accepts an array of browsers that you would like to be included in the report. For example `["chrome 52", "ie 11"]` will return results for Chrome 52 and IE 11. This array can be generated with [Browserslist](https://github.com/ai/browserslist), for example `browserslist('last 1 version, > 10%');` will return results for all browser versions that are the last version of each major browser, or have a usage of over 10% in global usage statistics.
+- `output` (optional) accepts a file path where the HTML report should be exported.
 
 ## Example usage
 
@@ -33,13 +34,16 @@ compatibilityReporter.report({
 			files: 'spec/fixtures/**/*.html'
 		}
 	},
-	browsers: ['chrome 51', 'firefox 47', 'safari 9.1', 'edge 13', 'ie 11', 'ie 10']
+	browsers: ['chrome 51', 'firefox 47', 'safari 9.1', 'edge 13', 'ie 11', 'ie 10'],
+	output: 'compatibility-report.html'
 }).then(function(result) {
 	console.log(result);
 });
 ```
 
-This would result in the following console log:
+This would generate a file called `compatibility-report.html` and log the following to the console:
+
+![Screenshot of compatibility-report.html](/templates/screenshot-output-example.png?raw=true)
 
 ```js
 {
