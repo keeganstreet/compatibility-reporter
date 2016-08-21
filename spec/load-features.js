@@ -1,4 +1,5 @@
-var loadFeatures = require('../lib/load-features');
+var loadFeatures = require('../lib/load-features'),
+	fs = require('fs');
 
 describe('Features loading', function() {
 	var features;
@@ -60,6 +61,19 @@ describe('Features loading', function() {
 						}
 					}
 				}
+			}
+		}
+	});
+
+	it('there should be caniuse data for each feature', function() {
+		var featureName,
+			data;
+
+		for (featureName in features) {
+			if (features.hasOwnProperty(featureName)) {
+				data = fs.readFileSync('node_modules/caniuse-db/features-json/' + featureName + '.json', { encoding: 'utf8' });
+				expect(data).toEqual(jasmine.any(String));
+				expect(data.substr(0, 1)).toEqual('{');
 			}
 		}
 	});
