@@ -39,7 +39,7 @@ describe('Compatibility reporter', function() {
 		expect(report).toEqual(jasmine.any(Object));
 	});
 
-	['addeventlistener', 'arrow-functions', 'atob-btoa', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'history', 'svg', 'webworkers'].forEach(function(feature) {
+	['addeventlistener', 'arrow-functions', 'atob-btoa', 'autofocus', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'history', 'matchmedia', 'promises', 'svg', 'webworkers'].forEach(function(feature) {
 		it('should find the use of ' + feature, function() {
 			expect(report[feature]).toEqual(jasmine.any(Object));
 			expect(Array.isArray(report[feature].occurances)).toBe(true);
