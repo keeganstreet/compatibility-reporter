@@ -12,49 +12,31 @@ describe('Features loading', function() {
 	});
 
 	it('properties on features should be booleans or arrays of regular expressions', function() {
-		var featureName,
-			feature,
-			testName,
-			test;
+		Object.keys(features).forEach(function(featureName) {
+			var feature = features[featureName],
+				testName,
+				test;
 
-		for (featureName in features) {
-			if (features.hasOwnProperty(featureName)) {
-				feature = features[featureName];
-
-				if (feature.hasOwnProperty('css')) {
-					expect(feature.css).toEqual(jasmine.any(Object));
-					for (testName in feature.css) {
-						if (feature.css.hasOwnProperty(testName)) {
-							test = feature.css[testName];
-							expect(Array.isArray(test)).toBe(true);
-							test.forEach(function(regexp) {
-								expect(regexp.constructor === RegExp).toBe(true);
-							});
-						}
+			if (feature.hasOwnProperty('css')) {
+				expect(feature.css).toEqual(jasmine.any(Object));
+				for (testName in feature.css) {
+					if (feature.css.hasOwnProperty(testName)) {
+						test = feature.css[testName];
+						expect(Array.isArray(test)).toBe(true);
+						test.forEach(function(regexp) {
+							expect(regexp.constructor === RegExp).toBe(true);
+						});
 					}
 				}
+			}
 
-				if (feature.hasOwnProperty('javascript')) {
-					expect(feature.javascript).toEqual(jasmine.any(Object));
-					for (testName in feature.javascript) {
-						if (feature.javascript.hasOwnProperty(testName)) {
-							test = feature.javascript[testName];
-							expect(Array.isArray(test) || typeof test === 'boolean').toBe(true);
-							if (Array.isArray(test)) {
-								test.forEach(function(regexp) {
-									expect(regexp.constructor === RegExp).toBe(true);
-								});
-							}
-						}
-					}
-				}
-
-				if (feature.hasOwnProperty('html')) {
-					expect(feature.html).toEqual(jasmine.any(Object));
-					for (testName in feature.html) {
-						if (feature.html.hasOwnProperty(testName)) {
-							test = feature.html[testName];
-							expect(Array.isArray(test)).toBe(true);
+			if (feature.hasOwnProperty('javascript')) {
+				expect(feature.javascript).toEqual(jasmine.any(Object));
+				for (testName in feature.javascript) {
+					if (feature.javascript.hasOwnProperty(testName)) {
+						test = feature.javascript[testName];
+						expect(Array.isArray(test) || typeof test === 'boolean').toBe(true);
+						if (Array.isArray(test)) {
 							test.forEach(function(regexp) {
 								expect(regexp.constructor === RegExp).toBe(true);
 							});
@@ -62,7 +44,20 @@ describe('Features loading', function() {
 					}
 				}
 			}
-		}
+
+			if (feature.hasOwnProperty('html')) {
+				expect(feature.html).toEqual(jasmine.any(Object));
+				for (testName in feature.html) {
+					if (feature.html.hasOwnProperty(testName)) {
+						test = feature.html[testName];
+						expect(Array.isArray(test)).toBe(true);
+						test.forEach(function(regexp) {
+							expect(regexp.constructor === RegExp).toBe(true);
+						});
+					}
+				}
+			}
+		});
 	});
 
 	it('there should be caniuse data for each feature', function() {
