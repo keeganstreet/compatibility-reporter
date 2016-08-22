@@ -1,10 +1,10 @@
-# Compatibility reporter
+# Compatibility Reporter
 
 Generate a report on the Web Platform features that your website uses, and the browser support of each feature, using data from [Can I Use](http://caniuse.com/).
 
-Compatibility reporter crawls through your CSS, JavaScript and HTML and builds up an Abstract Syntax Tree (AST) for each file. It then searches through the relevant parts of each file (such as declaration property names and values in CSS, identifier names in JavaScript, and element and attribute names in HTML), to identify which features are in use. It then extracts support data for each of these features from the Can I Use database for each browser you requested.
+Compatibility Reporter crawls through your CSS, JavaScript and HTML and builds up an Abstract Syntax Tree (AST) for each file. It then searches through the relevant parts of each file (such as declaration property names and values in CSS, identifier names in JavaScript, and element and attribute names in HTML), to identify which features are in use. It then extracts support data for each of these features from the Can I Use database for each browser you requested.
 
-So far I have only added checks for the following features: `'addeventlistener', 'arrow-functions', 'atob-btoa', 'autofocus', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'history', 'matchmedia', 'promises', 'svg', 'webworkers'`. More to come. See [Adding checks for features](#adding-checks).
+So far Compatibility Reporter checks for the following features: `'addeventlistener', 'arrow-functions', 'atob-btoa', 'autofocus', 'background-attachment', 'background-img-opts', 'background-position-x-y', 'calc', 'canvas', 'const', 'contenteditable', 'css-all', 'css-animation', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'flexbox', 'history', 'let', 'matchmedia', 'promises', 'svg', 'viewport-units', 'webworkers'`. More to come. See [Adding checks for features](#adding-checks).
 
 ## Input
 
@@ -104,11 +104,11 @@ To add a check for a feature, add a JavaScript file in the `lib/features` folder
 
 ### CSS
 
-CSS checks should define regular expressions to match declaration properties and/or declaration values.
+CSS checks should define regular expressions to match declaration properties and/or declaration values. See the `flexbox` test for an example where both the property and value must match for a result to be returned. You can also define checks for at-rules, such as `@keyframes`.
 
 ### JavaScript
 
-JavaScript checks should define regular expressions to match identifiers or literals, as per the [ESTree specification](https://github.com/estree/estree). Or alternatively they can check for the existence of a node type, for example the Arrow Functions test will return true if the script has a node of type `ArrowFunctionExpression`, no regular expression matching is necessary.
+JavaScript checks should define regular expressions to match identifiers, literals, or variable declarations as per the [ESTree specification](https://github.com/estree/estree). Or alternatively they can check for the existence of a node type, for example the Arrow Functions test will return true if the script has a node of type `ArrowFunctionExpression` - no regular expression matching is necessary.
 
 ### HTML
 
