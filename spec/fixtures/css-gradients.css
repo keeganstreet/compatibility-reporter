@@ -1,3 +1,4 @@
 div {
 	background: linear-gradient(135deg, red, red 60%, blue);
+	compatibility-reporter-invalid: linear-gradient(135deg, red, red 60%, blue);
 }

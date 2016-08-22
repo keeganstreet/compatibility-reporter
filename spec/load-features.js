@@ -11,7 +11,7 @@ describe('Features loading', function() {
 		expect(features['css-gradients']).toEqual(jasmine.any(Object));
 	});
 
-	it('properties on features should be booleans or arrays of regular expressions', function() {
+	it('properties on features should be booleans or arrays', function() {
 		Object.keys(features).forEach(function(featureName) {
 			var feature = features[featureName],
 				testName,
@@ -23,9 +23,6 @@ describe('Features loading', function() {
 					if (feature.css.hasOwnProperty(testName)) {
 						test = feature.css[testName];
 						expect(Array.isArray(test)).toBe(true);
-						test.forEach(function(regexp) {
-							expect(regexp.constructor === RegExp).toBe(true);
-						});
 					}
 				}
 			}

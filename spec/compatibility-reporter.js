@@ -51,6 +51,12 @@ describe('Compatibility reporter', function() {
 			expect(Array.isArray(report[feature].occurances)).toBe(true);
 		});
 
+		it('should not contain any invalid items for ' + feature, function() {
+			report[feature].occurances.forEach(function(occurance) {
+				expect(occurance.match.indexOf('compatibility-reporter-invalid')).toEqual(-1);
+			});
+		});
+
 		it('should return browser support data for ' + feature, function() {
 			expect(report[feature].browsers).toEqual(jasmine.any(Object));
 		});
