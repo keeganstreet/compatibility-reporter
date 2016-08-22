@@ -1,0 +1,10 @@
+@keyframes fadeInAnimation {
+	/* starting state */
+	from {
+		opacity: 0;
+	}
+	/* ending state */
+	to {
+		opacity: 1;
+	}
+}
