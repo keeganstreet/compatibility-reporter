@@ -48,6 +48,7 @@ This would generate a file called `compatibility-report.html` and log the follow
 ```js
 {
   "addeventlistener": {
+    "title": "EventTarget.addEventListener()",
     "occurances": [{
       "file": "spec/fixtures/addeventlistener.js",
       "line": 13,
@@ -62,6 +63,7 @@ This would generate a file called `compatibility-report.html` and log the follow
     }
   },
   "arrow-functions": {
+    "title": "Arrow functions",
     "occurances": [{
       "file": "spec/fixtures/arrow-functions.js",
       "line": 3,

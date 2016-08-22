@@ -63,9 +63,9 @@
 		<tbody>
 			{{#each results}}
 			<tr>
-				<th><a href="#feature-{{@key}}">{{@key}}</a></th>
+				<th><a href="#feature-{{id}}">{{value.title}}</a></th>
 				{{#each ../browsers}}
-				<td class="{{browserFeatureSupportClassname this ../this}}">{{browserFeatureSupport this ../this}}</td>
+				<td class="{{browserFeatureSupportClassname this ../value}}">{{browserFeatureSupport this ../value}}</td>
 				{{/each}}
 			</tr>
 			{{/each}}
@@ -86,9 +86,9 @@
 		<tbody>
 			{{#each results}}
 			<tr>
-				<th colspan="5" id="feature-{{@key}}"><h3>{{@key}}</h3></th>
+				<th colspan="5" id="feature-{{id}}"><h3>{{value.title}}</h3></th>
 			</tr>
-			{{#each occurances}}
+			{{#each value.occurances}}
 			<tr>
 				<td headers="feature-{{@key}} reference-file">{{file}}</td>
 				<td headers="feature-{{@key}} reference-line">{{line}}</td>
