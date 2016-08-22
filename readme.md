@@ -22,22 +22,22 @@ The `report` method accepts one object as a parameter. This object should have t
 var compatibilityReporter = require('compatibility-reporter');
 
 compatibilityReporter.report({
-	input: {
-		css: {
-			files: 'spec/fixtures/**/*.css'
-		},
-		javascript: {
-			files: 'spec/fixtures/**/*.js',
-			ignore: 'spec/fixtures/lib/*.js'
-		},
-		html: {
-			files: 'spec/fixtures/**/*.html'
-		}
-	},
-	browsers: ['chrome 51', 'firefox 47', 'safari 9.1', 'edge 13', 'ie 11', 'ie 10'],
-	output: 'compatibility-report.html'
+  input: {
+    css: {
+      files: 'spec/fixtures/**/*.css'
+    },
+    javascript: {
+      files: 'spec/fixtures/**/*.js',
+      ignore: 'spec/fixtures/lib/*.js'
+    },
+    html: {
+      files: 'spec/fixtures/**/*.html'
+    }
+  },
+  browsers: ['chrome 51', 'firefox 47', 'safari 9.1', 'edge 13', 'ie 11', 'ie 10'],
+  output: 'compatibility-report.html'
 }).then(function(result) {
-	console.log(result);
+  console.log(result);
 });
 ```
 
