@@ -1,0 +1,7 @@
+.grid__item {
+	box-sizing: border-box;
+	float: left;
+	height: 50vw;
+	padding: 2em;
+	width: 50vw;
+}
