@@ -6,7 +6,8 @@
   "author": "Keegan Street",
   "license": "MIT",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "status": "node scripts/status.js"
   },
   "devDependencies": {
     "jasmine": "^2.4.1",

@@ -102,7 +102,7 @@ Each browser version receives a string ID indicating the level of support for th
 
 ## <a name="adding-checks"></a>Adding checks for features
 
-To add a check for a feature, add a JavaScript file in the `lib/features` folder with the same name as the Can I Use feature definition at https://github.com/Fyrd/caniuse/tree/master/features-json. Add a CSS, JavaScript and/or HTML fixture to the `spec/fixtures` folder to verify your check.
+To add a check for a feature, add a JavaScript file in the `lib/features` folder with the same name as the Can I Use feature definition at https://github.com/Fyrd/caniuse/tree/master/features-json. Add a CSS, JavaScript and/or HTML fixture to the `spec/fixtures` folder to verify your check. If you would like to contribute, you can run `npm run status` to see a list of priority feature checks that need to be added.
 
 ### CSS
 
