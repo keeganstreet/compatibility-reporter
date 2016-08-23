@@ -1,0 +1,4 @@
+.pattern {
+	border: 30px solid transparent;
+	border-image: url(http://docs.webplatform.org/w/images/d/d8/border-image.png) 30 repeat;
+}

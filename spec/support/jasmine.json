@@ -1,7 +1,10 @@
 {
   "spec_dir": "spec",
   "spec_files": [
-    "*.js"
+    "load-features.js",
+    "load-files.js",
+    "partial-input.js",
+    "compatibility-reporter.js"
   ],
   "stopSpecOnExpectationFailure": false,
   "random": false
