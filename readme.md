@@ -4,7 +4,55 @@ Generate a report on the Web Platform features that your website uses, and the b
 
 Compatibility Reporter crawls through your CSS, JavaScript and HTML and builds up an Abstract Syntax Tree (AST) for each file. It then searches through the relevant parts of each file (such as declaration property names and values in CSS, identifier names in JavaScript, and element and attribute names in HTML), to identify which features are in use. It then extracts support data for each of these features from the Can I Use database for each browser you requested.
 
-So far Compatibility Reporter checks for the following features: `'addeventlistener', 'arrow-functions', 'atob-btoa', 'autofocus', 'background-attachment', 'background-img-opts', 'background-position-x-y', 'calc', 'canvas', 'const', 'contenteditable', 'css-all', 'css-animation', 'css-gradients', 'css-transitions', 'css3-boxsizing', 'flexbox', 'history', 'let', 'matchmedia', 'promises', 'svg', 'viewport-units', 'webworkers'`. More to come. See [Adding checks for features](#adding-checks).
+So far Compatibility Reporter checks for the following features:
+
+- contenteditable (contenteditable attribute (basic support))
+- webworkers (Web Workers)
+- border-image (CSS3 Border images)
+- background-img-opts (CSS3 Background-image options)
+- beacon (Beacon API)
+- css3-boxsizing (CSS3 Box-sizing)
+- transforms2d (CSS3 2D Transforms)
+- devicepixelratio (Window.devicePixelRatio)
+- transforms3d (CSS3 3D Transforms)
+- css-transitions (CSS3 Transitions)
+- css-animation (CSS Animation)
+- css-gradients (CSS Gradients)
+- svg (SVG (basic support))
+- canvas (Canvas (basic support))
+- x-doc-messaging (Cross-document messaging)
+- flexbox (Flexible Box Layout Module)
+- websockets (Web Sockets)
+- hidden (hidden attribute)
+- calc (calc() as CSS unit value)
+- history (Session history management)
+- wordwrap (CSS3 Overflow-wrap)
+- xhr2 (XMLHttpRequest advanced features)
+- notifications (Web Notifications)
+- deviceorientation (DeviceOrientation & DeviceMotion events)
+- matchmedia (matchMedia)
+- word-break (CSS3 word-break)
+- viewport-units (Viewport units: vw, vh, vmin, vmax)
+- channel-messaging (Channel messaging)
+- mutationobserver (Mutation Observer)
+- promises (Promises)
+- serviceworkers (Service Workers)
+- srcset (Srcset attribute)
+- will-change (CSS will-change property)
+- picture (Picture element)
+- atob-btoa (Base64 encoding and decoding)
+- autofocus (Autofocus attribute)
+- background-attachment (CSS background-attachment)
+- css-filter-function (CSS filter() function)
+- const (const)
+- css-all (CSS all property)
+- let (let)
+- arrow-functions (Arrow functions)
+- addeventlistener (EventTarget.addEventListener())
+- proxy (Proxy object)
+- background-position-x-y (background-position-x & background-position-y)
+
+This is only a small subset of the features available on Can I Use. Adding more feature checks is a work in progress. See [Adding checks for features](#adding-checks).
 
 ## Input
 
