@@ -58,7 +58,7 @@ describe('Compatibility reporter', function() {
 		});
 
 		it('should return browser support data for ' + feature, function() {
-			expect(report[feature].browsers).toEqual(jasmine.any(Object));
+			expect(report[feature].stats).toEqual(jasmine.any(Object));
 		});
 
 		browsers.forEach(function(browser) {
@@ -67,7 +67,7 @@ describe('Compatibility reporter', function() {
 				browserVersion = browserArray[1];
 
 			it('should return browser support data for ' + feature + ' on ' + browser, function() {
-				expect(report[feature].browsers[browserName][browserVersion]).toEqual(jasmine.any(String));
+				expect(report[feature].stats[browserName][browserVersion]).toEqual(jasmine.any(String));
 			});
 		});
 	});

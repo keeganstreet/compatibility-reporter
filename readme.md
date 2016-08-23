@@ -54,7 +54,7 @@ This would generate a file called `compatibility-report.html` and log the follow
       "line": 13,
       "column": 3
     }],
-    "browsers": {
+    "stats": {
       "chrome": { "51": "y" },
       "firefox": { "47": "y" },
       "safari": { "9.1": "y" },
@@ -77,7 +77,7 @@ This would generate a file called `compatibility-report.html` and log the follow
       "line": 6,
       "column": 9
     }],
-    "browsers": {
+    "stats": {
       "chrome": { "51": "y" },
       "firefox": { "47": "y" },
       "safari": { "9.1": "n" },
