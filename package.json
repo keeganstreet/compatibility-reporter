@@ -10,8 +10,7 @@
     "status": "node scripts/status.js"
   },
   "devDependencies": {
-    "jasmine": "^2.4.1",
-    "postcss": "^5.1.2"
+    "jasmine": "^2.4.1"
   },
   "dependencies": {
     "caniuse-db": "^1.0.30000525",
@@ -20,6 +19,7 @@
     "glob": "^7.0.5",
     "handlebars": "^4.0.5",
     "minimatch": "^3.0.3",
-    "parse5": "^2.2.0"
+    "parse5": "^2.2.0",
+    "postcss": "^5.1.2"
   }
 }
