@@ -18,18 +18,7 @@ describe('Compatibility reporter', function() {
 
 	beforeAll(function(done) {
 		compatibilityReporter.report({
-			input: {
-				css: {
-					files: 'spec/fixtures/**/*.css'
-				},
-				javascript: {
-					files: 'spec/fixtures/**/*.js',
-					ignore: 'spec/fixtures/lib/*.js'
-				},
-				html: {
-					files: 'spec/fixtures/**/*.html'
-				}
-			},
+			files: ['spec/fixtures/**/*'],
 			browsers: browsers
 		}).then(function(result) {
 			report = result;

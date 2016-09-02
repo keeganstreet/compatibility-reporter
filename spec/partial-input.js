@@ -1,15 +1,11 @@
 var compatibilityReporter = require('../lib/compatibility-reporter');
 
-describe('Compatibility reporter should accept partial input', function() {
+describe('Compatibility reporter should accept partial input (e.g. just CSS files)', function() {
 	var report;
 
 	beforeAll(function(done) {
 		compatibilityReporter.report({
-			input: {
-				css: {
-					files: 'spec/fixtures/**/*.css'
-				}
-			},
+			files: ['spec/fixtures/**/*.css'],
 			browsers: [
 				'chrome 51',
 				'firefox 47',
