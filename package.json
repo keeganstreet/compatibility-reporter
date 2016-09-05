@@ -1,6 +1,6 @@
 {
   "name": "compatibility-reporter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Generate a report on the Web Platform features that your website uses, and the browser support of each feature.",
   "main": "lib/compatibility-reporter.js",
   "author": "Keegan Street",
