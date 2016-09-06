@@ -48,9 +48,6 @@ describe('Features loading', function() {
 					if (feature.html.hasOwnProperty(testName)) {
 						test = feature.html[testName];
 						expect(Array.isArray(test)).toBe(true);
-						test.forEach(function(regexp) {
-							expect(regexp.constructor === RegExp).toBe(true);
-						});
 					}
 				}
 			}
