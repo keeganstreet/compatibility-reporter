@@ -4,6 +4,8 @@ Generate a report on the Web Platform features that your website uses, and the b
 
 Compatibility Reporter crawls through your CSS, JavaScript and HTML and builds up an Abstract Syntax Tree (AST) for each file. It then searches through the relevant parts of each file (such as declaration property names and values in CSS, identifier names in JavaScript, and element and attribute names in HTML), to identify which features are in use. It then extracts support data for each of these features from the Can I Use database for each browser you requested.
 
+Compatibility Reporter is available as an [Atom package](https://atom.io/packages/compatibility-reporter).
+
 
 ## Input
 
