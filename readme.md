@@ -177,8 +177,8 @@ CSS checks should define regular expressions to match declaration properties and
 
 ### JavaScript
 
-JavaScript checks should define regular expressions to match identifiers, literals, or variable declarations as per the [ESTree specification](https://github.com/estree/estree). Or alternatively they can check for the existence of a node type, for example the Arrow Functions test will return true if the script has a node of type `ArrowFunctionExpression` - no regular expression matching is necessary.
+JavaScript checks should define regular expressions to match identifier names, literal values, or variable declarations as per the [ESTree specification](https://github.com/estree/estree). Or alternatively they can check for the existence of a node type, for example the Arrow Functions test will return true if the script has a node of type `ArrowFunctionExpression` - no regular expression matching is necessary.
 
 ### HTML
 
-CSS checks should define regular expressions to match element names or attribute names.
+CSS checks should define regular expressions to match element names, attribute names or attribute values. See the `imports` test for an example of where both attribute name and attribute value must match for a result to be returned.
